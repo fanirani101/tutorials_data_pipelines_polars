@@ -1,0 +1,32 @@
+[tool.mypy]
+mypy_path = "$MYPY_CONFIG_FILE_DIR/out"
+allow_redefinition = true
+pretty = true
+show_error_context = true
+show_error_codes = true
+install_types = true
+non_interactive = true
+show_column_numbers = true
+check_untyped_defs = true
+
+[tool.black]
+line-length = 80
+skip-string-normalization = true
+
+[tool.isort]
+profile = "black"
+line_length = 80
+
+[tool.interrogate]
+ignore-regex = []
+verbose = 2
+omit-covered-files = true
+ignore-init-method = true
+ignore-init-module = true
+fail-under = 5
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+console_output_style = "progress"
+addopts = "--pdb --doctest-modules"
+pythonpath = ["."]
